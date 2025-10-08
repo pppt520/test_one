@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>思政教育专题 | 人民教育</title>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+    body { font-family: 'Inter', 'system-ui', 'sans-serif'; }
+    /* Header / logo styles */
+    .site-logo { width: 48px; height: 48px; display:inline-block; flex-shrink:0; }
+    .site-title { font-size: 1.25rem; color: #fff; }
+    .site-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.9); }
+        .theme-red { background: #d60000; color: #fff; }
+        .theme-yellow { background: #ffe066; color: #d60000; }
+        .theme-white { background: #fff; color: #d60000; }
+        .section-title { font-size: 2rem; font-weight: bold; color: #d60000; }
+        .nav-link { color: #d60000; font-weight: 600; }
+        .nav-link:hover, .nav-link.active { color: #ffc107; font-weight: 700; text-decoration: underline; }
+        .timeline-dot { background: #d60000; }
+        .timeline-bar { background: #ffe066; }
+        /* For video aspect ratio: use a single, predictable class. Use aspect-ratio when available with a fallback. */
+        .aspect-16-9 { position: relative; width: 100%; }
+        @supports (aspect-ratio: 16/9) {
+            .aspect-16-9 { aspect-ratio: 16 / 9; }
+            .aspect-16-9 > * { width: 100%; height: 100%; }
+        }
+        @supports not (aspect-ratio: 16/9) {
+            .aspect-16-9 { padding-top: 56.25%; }
+            .aspect-16-9 > * { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="theme-red py-6 shadow-md">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="flex items-center space-x-4">
+                <a href="#" class="flex items-center gap-3 no-underline" aria-label="思政教育专题首页">
+                    <!-- 白底徽章，红色五角星与书本象征红色思政教育 -->
+                    <span class="site-logo" aria-hidden="true">
+                        <svg width="48" height="48" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
+                            <title id="logoTitle">思政教育专题 标志</title>
+                            <!-- 红色圆形底 -->
+                            <circle cx="32" cy="32" r="32" fill="#d60000" />
+                            <!-- 白色书本（简化抽象形状） -->
+                            <g transform="translate(6,12) scale(0.8)">
+                                <path d="M6 26c6-4 14-4 20 0 6-4 14-4 20 0v10c-6-4-14-4-20 0-6-4-14-4-20 0V26z" fill="#ffffff" />
+                                <path d="M6 18c6-3 14-3 20 0 6-3 14-3 20 0v3c-6-3-14-3-20 0-6-3-14-3-20 0v-3z" fill="#ffffff" opacity="0.95" />
+                                <path d="M32 21c-4-2-9-2-13 0v7c4-2 9-2 13 0v-7z" fill="#d60000" opacity="0.06" />
+                            </g>
+                            <!-- 黄色小星作为点缀 -->
+                            <polygon points="48,6 50.6,14.5 59,14.5 52.2,19.5 55,28 48,22.5 41,28 43.8,19.5 37,14.5 45.4,14.5" fill="#ffc107" />
+                        </svg>
+                    </span>
+                    <span>
+                        <span class="site-title font-bold tracking-wide">思政教育专题</span>
+                        <span class="block site-subtitle">人民教育 · 理想信念</span>
+                    </span>
+                </a>
+            </div>
+            <div class="text-lg font-medium text-white">主办单位：人民网教育频道</div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative h-80 flex items-center justify-center theme-yellow">
+    <!-- Hero 使用本地海报图片（若需替换为更合适的图片可告诉我） -->
+    <img src="images/university-poster.jpg" alt="红色文化背景" class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <div class="relative z-10 text-center">
+            <h1 class="text-4xl font-bold mb-4">2025年全国思政教育直播活动</h1>
+            <p class="text-lg mb-6">聚焦理想信念，弘扬时代精神，覆盖小学至大学全学段</p>
+            <a href="#" data-video="videos/primary.mp4" class="video-btn bg-red-600 text-white px-6 py-3 rounded-lg font-bold shadow-lg hover:bg-red-700 inline-flex items-center">
+                <i class="fa fa-play-circle mr-2"></i> 直播/回放
+            </a>
+        </div>
+    </section>
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto flex justify-center space-x-8 py-3" id="mainNav">
+            <a href="#primary" class="nav-link">小学</a>
+            <a href="#junior" class="nav-link">初中</a>
+            <a href="#senior" class="nav-link">高中</a>
+            <a href="#university" class="nav-link">大学</a>
+            <a href="#schedule" class="nav-link">时间安排</a>
+            <a href="#feedback" class="nav-link">感悟</a>
+        </div>
+    </nav>
+
+    <!-- 学段板块：小学 -->
+    <section id="primary" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title mb-4">小学：众志成城</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="mb-2 text-gray-700">出播时间：2025年4月10日 09:00</div>
+                    <div class="mb-2 text-gray-700">授课老师：王老师 <span class="text-xs text-yellow-600 ml-2">全国优秀班主任</span></div>
+                    <ul class="mb-4 text-gray-700 list-disc pl-5">
+                        <li>主题：团结协作，众志成城</li>
+                        <li>亮点：互动游戏、故事分享、班级小组展示</li>
+                        <li>目标：培养集体荣誉感和社会责任感</li>
+                    </ul>
+                    <button data-video="videos/primary.mp4" class="video-btn bg-red-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-red-700">
+                        <i class="fa fa-video-camera mr-2"></i>查看直播/视频
+                    </button>
+                </div>
+                <button aria-label="播放 小学 视频" class="relative group video-btn p-0 border-0 bg-transparent" data-video="videos/primary.mp4">
+                    <img src="images/primary-poster.jpg" alt="小学 视频 封面" class="w-full rounded-lg shadow-lg object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg pointer-events-none">
+                        <i class="fa fa-play-circle text-white text-6xl" aria-hidden="true"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学段板块：初中 -->
+    <section id="junior" class="py-12 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title mb-4">初中：理想信念</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="mb-2 text-gray-700">出播时间：2025年4月12日 09:00</div>
+                    <div class="mb-2 text-gray-700">授课老师：李老师 <span class="text-xs text-yellow-600 ml-2">思政金牌讲师</span></div>
+                    <ul class="mb-4 text-gray-700 list-disc pl-5">
+                        <li>主题：理想信念，勇于追梦</li>
+                        <li>亮点：名人故事、理想树绘制、互动问答</li>
+                        <li>目标：树立远大理想，坚定信念</li>
+                    </ul>
+                    <button data-video="videos/junior.mp4" class="video-btn bg-red-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-red-700">
+                        <i class="fa fa-video-camera mr-2"></i>查看直播/视频
+                    </button>
+                </div>
+                <button aria-label="播放 初中 视频" class="relative group video-btn p-0 border-0 bg-transparent" data-video="videos/junior.mp4">
+                    <img src="images/junior-poster.jpg" alt="初中 视频 封面" class="w-full rounded-lg shadow-lg object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg pointer-events-none">
+                        <i class="fa fa-play-circle text-white text-6xl" aria-hidden="true"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学段板块：高中 -->
+    <section id="senior" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title mb-4">高中：时代担当</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="mb-2 text-gray-700">出播时间：2025年4月14日 09:00</div>
+                    <div class="mb-2 text-gray-700">授课老师：张老师 <span class="text-xs text-yellow-600 ml-2">社会实践专家</span></div>
+                    <ul class="mb-4 text-gray-700 list-disc pl-5">
+                        <li>主题：时代担当，社会实践</li>
+                        <li>亮点：社会调研、志愿服务、案例分析</li>
+                        <li>目标：勇担时代责任，积极参与社会实践</li>
+                    </ul>
+                    <button data-video="videos/senior.mp4" class="video-btn bg-red-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-red-700">
+                        <i class="fa fa-video-camera mr-2"></i>查看直播/视频
+                    </button>
+                </div>
+                <button aria-label="播放 高中 视频" class="relative group video-btn p-0 border-0 bg-transparent" data-video="videos/senior.mp4">
+                    <img src="images/senior-poster.jpg" alt="高中 视频 封面" class="w-full rounded-lg shadow-lg object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg pointer-events-none">
+                        <i class="fa fa-play-circle text-white text-6xl" aria-hidden="true"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学段板块：大学 -->
+    <section id="university" class="py-12 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title mb-4">大学：砥砺前行</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="mb-2 text-gray-700">出播时间：2025年4月16日 09:00</div>
+                    <div class="mb-2 text-gray-700">授课老师：赵老师 <span class="text-xs text-yellow-600 ml-2">创新创业导师</span></div>
+                    <ul class="mb-4 text-gray-700 list-disc pl-5">
+                        <li>主题：砥砺前行，服务社会</li>
+                        <li>亮点：创新创业案例、社会服务项目、学术交流</li>
+                        <li>目标：坚定理想信念，勇于创新，服务社会</li>
+                    </ul>
+                    <button data-video="videos/university.mp4" class="video-btn bg-red-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-red-700">
+                        <i class="fa fa-video-camera mr-2"></i>查看直播/视频
+                    </button>
+                </div>
+                <button aria-label="播放 大学 视频" class="relative group video-btn p-0 border-0 bg-transparent" data-video="videos/university.mp4">
+                    <img src="images/university-poster.jpg" alt="大学 视频 封面" class="w-full rounded-lg shadow-lg object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg pointer-events-none">
+                        <i class="fa fa-play-circle text-white text-6xl" aria-hidden="true"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 时间安排板块 -->
+    <section id="schedule" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title mb-8">时间安排</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="flex flex-col items-center group cursor-pointer" title="小学：众志成城">
+                    <div class="timeline-dot w-6 h-6 rounded-full mb-2 animate-bounce group-hover:scale-125 transition-transform"></div>
+                    <div class="font-bold text-red-600">小学</div>
+                    <div class="timeline-bar w-1 h-16 md:h-24 group-hover:bg-red-600 transition-colors"></div>
+                    <div class="text-gray-700">4月10日</div>
+                    <div class="text-xs text-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity mt-1">主题：团结协作</div>
+                </div>
+                <div class="flex flex-col items-center group cursor-pointer" title="初中：理想信念">
+                    <div class="timeline-dot w-6 h-6 rounded-full mb-2 animate-bounce group-hover:scale-125 transition-transform"></div>
+                    <div class="font-bold text-red-600">初中</div>
+                    <div class="timeline-bar w-1 h-16 md:h-24 group-hover:bg-red-600 transition-colors"></div>
+                    <div class="text-gray-700">4月12日</div>
+                    <div class="text-xs text-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity mt-1">主题：理想信念</div>
+                </div>
+                <div class="flex flex-col items-center group cursor-pointer" title="高中：时代担当">
+                    <div class="timeline-dot w-6 h-6 rounded-full mb-2 animate-bounce group-hover:scale-125 transition-transform"></div>
+                    <div class="font-bold text-red-600">高中</div>
+                    <div class="timeline-bar w-1 h-16 md:h-24 group-hover:bg-red-600 transition-colors"></div>
+                    <div class="text-gray-700">4月14日</div>
+                    <div class="text-xs text-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity mt-1">主题：时代担当</div>
+                </div>
+                <div class="flex flex-col items-center group cursor-pointer" title="大学：砥砺前行">
+                    <div class="timeline-dot w-6 h-6 rounded-full mb-2 animate-bounce group-hover:scale-125 transition-transform"></div>
+                    <div class="font-bold text-red-600">大学</div>
+                    <div class="timeline-bar w-1 h-16 md:h-24 group-hover:bg-red-600 transition-colors"></div>
+                    <div class="text-gray-700">4月16日</div>
+                    <div class="text-xs text-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity mt-1">主题：砥砺前行</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 感悟／反响板块 -->
+    <section id="feedback" class="py-12 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title mb-8">师生感悟</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="images/primary-poster.jpg" alt="学生感悟-小明" class="h-24 w-24 rounded-full mb-4 object-cover" loading="lazy">
+                    <div class="font-bold text-red-600 mb-2">小明（小学）</div>
+                    <p class="text-gray-700">通过这次思政课，我学会了团结协作，懂得了为集体贡献自己的力量。</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="images/junior-poster.jpg" alt="学生感悟-小红" class="h-24 w-24 rounded-full mb-4 object-cover" loading="lazy">
+                    <div class="font-bold text-red-600 mb-2">小红（初中）</div>
+                    <p class="text-gray-700">老师的讲解让我树立了远大的理想，今后要努力学习，追逐梦想。</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="images/senior-poster.jpg" alt="老师感悟-张老师" class="h-24 w-24 rounded-full mb-4 object-cover" loading="lazy">
+                    <div class="font-bold text-red-600 mb-2">张老师（高中）</div>
+                    <p class="text-gray-700">希望同学们勇担时代责任，积极参与社会实践，成为有担当的青年。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于／团队介绍 -->
+    <section id="about" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title mb-8">关于与团队介绍</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+                    <img src="images/primary-poster.jpg" alt="授课教师 王老师" class="h-20 w-20 rounded-full mb-4 object-cover" loading="lazy">
+                    <div class="font-bold text-red-600 mb-2">王老师</div>
+                    <p class="text-gray-700 text-center">小学思政课主讲，专注儿童思想品德教育。</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+                    <img src="images/junior-poster.jpg" alt="备课团队" class="h-20 w-20 rounded-full mb-4 object-cover" loading="lazy">
+                    <div class="font-bold text-red-600 mb-2">备课团队</div>
+                    <p class="text-gray-700 text-center">由多位资深教师组成，负责课程内容策划与审核。</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+                    <img src="images/university-poster.jpg" alt="参与单位" class="h-20 w-20 rounded-full mb-4 object-cover" loading="lazy">
+                    <div class="font-bold text-red-600 mb-2">参与单位</div>
+                    <p class="text-gray-700 text-center">人民网教育频道、各地教育局联合主办。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="theme-red py-8 mt-12">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-white text-sm mb-4 md:mb-0">© 2025 人民网教育频道 | 版权所有</div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-white hover:text-yellow-300 text-sm">隐私条款</a>
+                <a href="#" class="text-white hover:text-yellow-300 text-sm">使用条款</a>
+                <a href="#" class="text-white hover:text-yellow-300 text-sm">联系我们</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 视频弹窗 -->
+    <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+        <div class="bg-black rounded-xl shadow-lg w-full max-w-4xl relative">
+            <button id="closeVideoModal" aria-label="关闭视频" class="absolute -top-3 -right-3 h-8 w-8 bg-red-600 text-white rounded-full flex items-center justify-center z-10 hover:bg-red-700 focus:outline-none"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <div class="aspect-16-9">
+                <video id="modalVideo" controls controlsList="nodownload" class="w-full h-full rounded-lg" src="" aria-label="视频播放窗口"></video>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- 感悟轮播交互 ---
+        const feedbacks = [
+            { img: 'https://edu.people.com.cn/img/student1.jpg', name: '小明（小学）', text: '通过这次思政课，我学会了团结协作，懂得了为集体贡献自己的力量。' },
+            { img: 'https://edu.people.com.cn/img/student2.jpg', name: '小红（初中）', text: '老师的讲解让我树立了远大的理想，今后要努力学习，追逐梦想。' },
+            { img: 'https://edu.people.com.cn/img/teacher1.jpg', name: '张老师（高中）', text: '希望同学们勇担时代责任，积极参与社会实践，成为有担当的青年。' },
+            { img: 'https://edu.people.com.cn/img/university.jpg', name: '李同学（大学）', text: '大学思政课让我明白了创新与服务社会的重要性。' }
+        ];
+        let feedbackIdx = 0;
+        const feedbackImg = document.getElementById('feedbackImg');
+        const feedbackName = document.getElementById('feedbackName');
+        const feedbackText = document.getElementById('feedbackText');
+        const prevBtn = document.getElementById('prevFeedback');
+        const nextBtn = document.getElementById('nextFeedback');
+
+        function showFeedback(idx) {
+            if (!feedbackImg) return; // 确保元素存在
+            const f = feedbacks[idx];
+            feedbackImg.src = f.img;
+            feedbackName.textContent = f.name;
+            feedbackText.textContent = f.text;
+        }
+
+        if (prevBtn) {
+            prevBtn.onclick = function() {
+                feedbackIdx = (feedbackIdx - 1 + feedbacks.length) % feedbacks.length;
+                showFeedback(feedbackIdx);
+            };
+        }
+        if (nextBtn) {
+            nextBtn.onclick = function() {
+                feedbackIdx = (feedbackIdx + 1) % feedbacks.length;
+                showFeedback(feedbackIdx);
+            };
+        }
+        
+        setInterval(function() {
+            feedbackIdx = (feedbackIdx + 1) % feedbacks.length;
+            showFeedback(feedbackIdx);
+        }, 5000);
+        
+        showFeedback(feedbackIdx); // 初始加载
+
+        // --- 视频弹窗（无障碍 & 焦点管理） ---
+        const videoBtns = document.querySelectorAll('.video-btn');
+        const videoModal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        const closeVideoModal = document.getElementById('closeVideoModal');
+        let lastFocusedElement = null;
+
+        function trapFocus(modal) {
+            const focusableSelectors = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+            const focusable = Array.from(modal.querySelectorAll(focusableSelectors));
+            if (focusable.length === 0) return () => {};
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            function handleKey(e) {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            }
+
+            document.addEventListener('keydown', handleKey);
+            return () => document.removeEventListener('keydown', handleKey);
+        }
+
+        function openModalWith(src) {
+            if (!modalVideo || !videoModal) return;
+            lastFocusedElement = document.activeElement;
+            videoModal.setAttribute('aria-hidden', 'false');
+            videoModal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden'); // 阻止背景滚动
+            // 使用 src 并 load
+            modalVideo.src = src;
+            modalVideo.load();
+            modalVideo.play().catch(() => {
+                // 自动播放被阻止：启用 controls 让用户手动播放
+                modalVideo.controls = true;
+            });
+            // focus 管理
+            closeVideoModal.focus();
+            // 启动焦点陷阱并返回释放函数
+            const releaseTrap = trapFocus(videoModal);
+            // 保存到元素上以便关闭时移除监听
+            videoModal._releaseTrap = releaseTrap;
+        }
+
+        function closeModal() {
+            if (!modalVideo || !videoModal) return;
+            modalVideo.pause();
+            modalVideo.removeAttribute('src');
+            modalVideo.load();
+            videoModal.classList.add('hidden');
+            videoModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('overflow-hidden');
+            if (videoModal._releaseTrap) {
+                try { videoModal._releaseTrap(); } catch (e) {}
+                delete videoModal._releaseTrap;
+            }
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') lastFocusedElement.focus();
+        }
+
+        videoBtns.forEach(btn => {
+            // Make sure keyboard users can activate elements that were divs
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const videoSrc = this.dataset.video;
+                if (videoSrc) {
+                    openModalWith(videoSrc);
+                } else {
+                    alert('未配置视频链接，请联系管理员。');
+                }
+            });
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        if (closeVideoModal) closeVideoModal.addEventListener('click', closeModal);
+        if (videoModal) videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) closeModal(); // 点击背景遮罩关闭
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+                closeModal(); // 按 ESC 键关闭
+            }
+        });
+
+        // --- 平滑滚动和导航高亮 ---
+        const navLinks = document.querySelectorAll('#mainNav .nav-link');
+        const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href')));
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, // 70px 是导航栏高度的偏移量
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        function highlightNav() {
+            let scrollY = window.scrollY;
+            let currentSection = null;
+
+            sections.forEach(section => {
+                if (section) {
+                    const sectionTop = section.offsetTop - 75;
+                    if (scrollY >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNav);
+        highlightNav(); // 初始加载时高亮
+    });
+    </script>
+</body>
+</html>
